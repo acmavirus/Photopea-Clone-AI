@@ -1,0 +1,12 @@
+.git
+.gitignore
+.codex
+.agents
+photopea-clone-master
+node_modules
+dist
+build
+Dockerfile
+docker-compose.yml
+README.md
+*.log
