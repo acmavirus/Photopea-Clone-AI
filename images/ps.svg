@@ -89,7 +89,7 @@
 		.shp30 { fill: #1c1c1c } 
 		.shp31 { fill: #686868 } 
 		.shp32 { fill: #da0100 } 
-		.txt33 { font-size: 130px;fill: #ffffff;font-family: "Microsoft YaHei";font-weight: 700 } 
+		.txt33 { font-size: 95px;fill: #ffffff;font-family: "Microsoft YaHei";font-weight: 700 } 
 	</style>
 	<path id="Layer" class="shp0" d="M3,43.7v732.7c0,22.4 18.3,40.6 40.8,40.6h936.4c22.5,0 40.8,-18.2 40.8,-40.7v-732.6c0,-22.5 -18.3,-40.7 -40.8,-40.7h-936.4c-22.5,0 -40.8,18.2 -40.8,40.7z" />
 	<path id="Layer" class="shp1" d="M70.8,683.7v52c0,4.4 3.6,8 8,8h44c4.4,0 8,-3.6 8,-8v-52c0,-4.4 -3.6,-8 -8,-8h-44c-4.4,0 -8,3.6 -8,8z" />
