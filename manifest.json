@@ -20,12 +20,22 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Photoeditor on Desktop"
     },
     {
-      "src": "images/ps.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
+      "src": "images/screenshot-narrow.png",
+      "sizes": "450x800",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Photoeditor on Mobile"
     }
   ]
 }

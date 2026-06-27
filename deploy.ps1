@@ -87,39 +87,34 @@ if ($VPS_KEY_PATH) {
 }
 
 # 3. Create a temporary archive of the project
-$ArchiveName = "project.tar.gz"
-Write-Host "Creating archive: $ArchiveName..." -ForegroundColor Green
-if (Test-Path $ArchiveName) {
-    Remove-Item $ArchiveName -Force
+# 3. Commit and Push local changes to Git
+try {
+    $status = git status --porcelain
+    if ($status) {
+        Write-Host "Staging and committing local changes..." -ForegroundColor Green
+        git add .
+        git commit -m "feat: auto-deploy PWA and icon updates"
+        Write-Host "Pushing changes to GitHub..." -ForegroundColor Green
+        git push origin main
+    } else {
+        Write-Host "No local changes to commit. Proceeding with remote deploy..." -ForegroundColor Green
+    }
+}
+catch {
+    Write-Host "Git push failed: $_" -ForegroundColor Red
+    exit 1
 }
 
-# Use bsdtar to bundle, excluding node_modules, .git, .gemini, etc.
-& tar --exclude=".git" --exclude=".gemini" --exclude=".agents" --exclude=".codex" --exclude="node_modules" --exclude=$ArchiveName --exclude="*.ps1" --exclude="*.env*" -czf $ArchiveName .
-
-# 4. Connect and Deploy
+# 4. Connect and Deploy on VPS
 try {
-    Write-Host "Connecting to VPS and ensuring project directory exists..." -ForegroundColor Green
-    $DirCmd = "mkdir -p $VPS_PROJECT_DIR"
-    & ssh -p $VPS_PORT @SshAuthArgs "$VPS_USER@$VPS_IP" $DirCmd
-
-    Write-Host "Uploading $ArchiveName to VPS..." -ForegroundColor Green
-    $DestPath = "${VPS_USER}@${VPS_IP}:${VPS_PROJECT_DIR}/"
-    & scp -P $VPS_PORT @ScpAuthArgs $ArchiveName $DestPath
-
-    Write-Host "Extracting archive and running docker-compose on VPS..." -ForegroundColor Green
-    $RemoteCmd = "export PORT=$VPS_APP_PORT && cd $VPS_PROJECT_DIR && tar -xzf $ArchiveName && rm $ArchiveName && docker compose down && docker compose up --build -d"
+    Write-Host "Connecting to VPS, pulling latest changes, and restarting containers..." -ForegroundColor Green
+    $RemoteCmd = "cd $VPS_PROJECT_DIR && git fetch origin && git reset --hard origin/main && git clean -fd && export PORT=$VPS_APP_PORT && docker compose down && docker compose up --build -d"
     & ssh -p $VPS_PORT @SshAuthArgs "$VPS_USER@$VPS_IP" $RemoteCmd
- 
+
     Write-Host "Deploy completed successfully!" -ForegroundColor Green
     Write-Host "App should be accessible at: http://${VPS_IP}:${VPS_APP_PORT}" -ForegroundColor Cyan
 }
 catch {
     Write-Host "Deployment failed: $_" -ForegroundColor Red
 }
-finally {
-    # 5. Clean up local archive
-    if (Test-Path $ArchiveName) {
-        Write-Host "Cleaning up local archive..." -ForegroundColor Green
-        Remove-Item $ArchiveName -Force
-    }
-}
+
