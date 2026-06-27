@@ -1,0 +1,31 @@
+{
+  "name": "Photoeditor | Online Photo Editor",
+  "short_name": "Photoeditor",
+  "description": "Open and edit PSD, XCF, Sketch, SVG or other image files. Online Photoshop alternative.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#2d3436",
+  "theme_color": "#10171d",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/ps.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
