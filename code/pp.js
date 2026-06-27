@@ -2086,7 +2086,7 @@ c.jz(F,8,576);c.jz(F,12,u);for(var V=0;V<2;V++)for(var y=0;y<E[V].length;y++){c.
 F[m+4]=V;m+=5}var z=new zn;c.G(z,0,16);var _=NM.Xt(z,O.uA,4);O.k$["r"+1065]=z.data.slice(0,_+4);var W=O.K;
 F=O.k$["r"+1069]=n.U(2+W.length*4,!0);c.ay(F,0,W.length);for(var V=0;V<W.length;V++)c.jz(F,2+4*V,O._[W[V]].add.lyid);
 var G=new Date,J=[G.getFullYear(),G.getMonth()+1,G.getDate(),G.getHours(),G.getMinutes(),G.getSeconds()];
-for(var V=0;V<6;V++)J[V]=(J[V]+"").padStart(2,"0");var v=[{t274:[1],t282:[72],t283:[72],t296:[2],t305:["Photopea Editor (ps.tuyitu.com)"],t306:[J[0]+":"+J[1]+":"+J[2]+" "+J[3]+":"+J[4]+":"+J[5]]},{t259:[6],t282:[72],t283:[72],t296:[2],t513:[302],t514:[0]}];
+for(var V=0;V<6;V++)J[V]=(J[V]+"").padStart(2,"0");var v=[{t274:[1],t282:[72],t283:[72],t296:[2],t305:["Photoeditor (photoeditor.thuc.me)"],t306:[J[0]+":"+J[1]+":"+J[2]+" "+J[3]+":"+J[4]+":"+J[5]]},{t259:[6],t282:[72],t283:[72],t296:[2],t513:[302],t514:[0]}];
 O.k$["r"+1058]=new Uint8Array(UTIF.encode(v));var j=p;c.G(i,p,4294967295);p+=4;for(var r in O.k$){c.fG(i,p+D,"8BIM");
 D+=4;var P=parseInt(r.substring(1));c.kl(i,p+D,P);D+=2;var N=c.TU(i,p+D,"");D+=N;var T=O.k$["r"+P],b=T.length;
 c.G(i,p+D,b);D+=4;c.QD(i,p+D,T);D+=b;if(b%2==1)D++}c.G(i,j,D);return p+D};fi.fuM=function(O,i,p){var V=p,E,u=O.jR?8:4;
@@ -6924,7 +6924,7 @@ O.appendChild(this.cx);this.fzs=new Nb("Run",!0,null,!0);this.fzs.V("click",this
 fL.prototype.BI=function(O,i,p){this.cx.value=fL.mw[0].lY};fL.prototype.fyv=function(O){var i=new k(f.E.g,!0);
 i.data={e:f.i.qX,link:"https://www.adobe.com/content/dam/acom/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2019.pdf"};
 this.B(i)};fL.prototype.fyS=function(O){var i=new k(f.E.g,!0);i.data={e:f.i.kp,vr:this.cx.value};this.B(i)};
-fL.prototype.fNO=function(O){var i=this.ffM.indexOf(O.currentTarget);this.cx.value=fL.mw[i].lY};fL.mw=[{Bn:"Hello",lY:"\nalert(\"Hello Photopea!\");\n"},{Bn:"Process Layers",lY:"\nvar lays = app.activeDocument.layers;\n\nfor(var i=0; i<lays.length; i++)\n{\n"+"\t//lays[i].visible = false;\n"+"\t//lays[i].opacity = 50;\n"+"\tlays[i].name = \"My Layer \"+i;\n}"},{Bn:"Clone Layers",lY:"\nvar orig = app.activeDocument.activeLayer;\n"+"var cnt = 12;\n"+"var angle = Math.floor(360 / cnt);\n"+"\n"+"for(var i=1; i<cnt; i++)\n"+"{\n"+"\tvar nlay = orig.duplicate();\n"+"\t//nlay.translate(30*i, 20*i);\n"+"\tnlay.rotate(angle * i, AnchorPosition.BOTTOMCENTER);\n"+"}"}];
+fL.prototype.fNO=function(O){var i=this.ffM.indexOf(O.currentTarget);this.cx.value=fL.mw[i].lY};fL.mw=[{Bn:"Hello",lY:"\nalert(\"Hello Photoeditor!\");\n"},{Bn:"Process Layers",lY:"\nvar lays = app.activeDocument.layers;\n\nfor(var i=0; i<lays.length; i++)\n{\n"+"\t//lays[i].visible = false;\n"+"\t//lays[i].opacity = 50;\n"+"\tlays[i].name = \"My Layer \"+i;\n}"},{Bn:"Clone Layers",lY:"\nvar orig = app.activeDocument.activeLayer;\n"+"var cnt = 12;\n"+"var angle = Math.floor(360 / cnt);\n"+"\n"+"for(var i=1; i<cnt; i++)\n"+"{\n"+"\tvar nlay = orig.duplicate();\n"+"\t//nlay.translate(30*i, 20*i);\n"+"\tnlay.rotate(angle * i, AnchorPosition.BOTTOMCENTER);\n"+"}"}];
 function mi(){Nd.call(this,[11,7],"newproject");this.data=null;var O=f.L("div","flexrow");this.Xl=O;
 this.body.appendChild(O);var i=f.L("div","form");this.xQ=i;O.appendChild(i);this.Ia=new mU([12,48]);
 i.appendChild(this.Ia.N);i.appendChild(f.L("br"));this.Oj=new Ob(!0);this.Oj.C(new l(1280,720),72);this.Oj.V(f.E.W,this.ms,this);
@@ -7040,7 +7040,7 @@ this.Vv.V("click",this.VP,this);this.xQ.appendChild(this.Vv.N);this.V("closebtn"
 zV.prototype.w=function(){Nd.prototype.w.call(this);this.kn.w()};zV.prototype.oN=function(O){var i=this.kn.H();
 this.mo({e:"warp",Lq:i})};zV.prototype.mo=function(O){var i=new k(f.E.l,!0);i.s=h.Cz;i.data=O;i.cn=!0;
 this.B(i)};zV.prototype.GM=function(O){this.mo({e:"warpCancel"})};zV.prototype.VP=function(O){this.mo({e:"warpConfirm"});
-this.close()};zV.prototype.BI=function(O,i){var p=O._[O.K[0]];this.kn.C(p.add.TySh.ct)};function Nj(){Nd.call(this,"Raw Photopea","rawpea");
+this.close()};zV.prototype.BI=function(O,i){var p=O._[O.K[0]];this.kn.C(p.add.TySh.ct)};function Nj(){Nd.call(this,"Raw Photoeditor","rawpea");
 this.ux=null;this.WK=null;this.a$=null;this.fax=0;this.vI=null;this.mk=null;this.fsj=500;this.fWj=500;
 this.V("closebtn",this.KF,this);f.lZ(this.body,"flexrow");var O=f.L("div"),i=f.L("div"),E="<svg  class=\"autoscale gsicon\" viewBox=\"0 0 14 18\" width=\"14\" height=\"18\" fill=\"black\"><path d=\"M14,6 L10,6 L10,0 L4,0 L4,6 L0,6 L7,13 L14,6 L14,6 Z M0,14 L0,16 L14,16 L14,14 Z\" /></svg>";
 i.setAttribute("style","padding-left: 1em");this.body.appendChild(O);this.body.appendChild(i);this.ZU=f.L("canvas");
