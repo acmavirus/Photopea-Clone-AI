@@ -42,6 +42,11 @@ desktop.ini
 .env.test.local
 .env.production.local
 *.env
+.env.deploy
+
+# Archives and backups
+project.tar.gz
+*.tar.gz
 
 # AI Agent metadata (if you don't want them in git)
 .agents/
